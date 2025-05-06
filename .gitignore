@@ -1,0 +1,17 @@
+.Rhistory
+.Rprofile
+*.csv
+*.sav
+*.sas7bdat
+*.xlsx
+*.xls
+*.pdf
+*.fff
+*.log
+*.tex
+.Rproj.user
+!df_anal.csv
+!codebook_df_anal.csv
+!df.csv
+!codebook_df.csv
+*.RData

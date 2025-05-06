@@ -1,0 +1,13 @@
+worcs_version: 0.1.14
+creator: vanlissa
+entry_point: run.r
+recipe:
+  recipe: source('run.r')
+  terminal: no
+data:
+  df.csv:
+    save_expression: write.csv(x = data, file = filename, row.names = FALSE)
+    load_expression: read.csv(file = filename, stringsAsFactors = TRUE)
+    codebook: codebook_df.rmd
+checksums:
+  df.csv: 18548a2f8423a058fa53e360f2482d4c
