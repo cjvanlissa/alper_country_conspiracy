@@ -60,7 +60,7 @@ eval_results <- function(dat, models){
   # for(n in names(models)){
   #   names(models[[n]]) <- paste0(n, "_", names(models[[n]]))
   # }
-  models <- do.call(c, models)
+  #models <- do.call(c, models)
 
   # Evaluate performance ----------------------------------------------------
   mses <- sapply(models, function(x){
@@ -79,33 +79,29 @@ eval_results <- function(dat, models){
   })
   rsqs_train <- sapply(models, `[[`, "rsq_train")
   # On test data
-  rsqs_test <- rsqs_train <- sapply(models, `[[`, "rsq")
+  rsqs_test <- sapply(models, `[[`, "rsq")
 
   df_rsq <- data.frame(
     mse = mses,
     mse_se = mse_sds,
     rsq_test = rsqs_test,
     rsq_train = rsqs_train,
-    do.call(rbind, strsplit(names(rsqs_test), ".", fixed = TRUE)))
-  names(df_rsq)[match(c("X1", "X2"), names(df_rsq))] <- c("model", "features")
-  mod_rsq <- aov(rsq_test ~ model + features, data = df_rsq)
+    model = names(rsqs_test))
 
   # Choose best model
   #rsqs <- unlist(lapply(do.call(c, models), `[[`, "rsq"))
-  best_model <- mses[which.min(mses)]
-  if(!grepl("(lasso|tree)", names(best_model))){
-    within_se <- mses[grepl("(lasso|tree)", names(mses))]
-    within_se <- within_se[within_se <= best_model+mse_sds[which.min(mses)]]
-    if(any(grepl("(lasso|tree)", names(within_se)))){
-      best_model <- within_se[which.min(within_se)]
+  best_model <- df_rsq$model[which.min(df_rsq$mse)]
+  if(!best_model %in% c("BRMA", "MetaCART")){
+    within_se <- df_rsq[df_rsq$model %in% c("BRMA", "MetaCART"), , drop = FALSE]
+    within_se <- within_se[within_se$mse <= min(df_rsq$mse) + df_rsq$mse_se[which.min(df_rsq$mse)], , drop = FALSE]
+    if(nrow(within_se) > 0){
+      best_model <- within_se$model[which.min(within_se$mse)]
     }
   }
-
   return(
     list(
       rsqs = df_rsq,
-      etasqs = etasq(mod_rsq),
-      best = names(best_model)
+      best = best_model
     )
   )
 }

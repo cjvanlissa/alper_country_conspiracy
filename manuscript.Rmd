@@ -37,7 +37,7 @@ These are the Rsquared values on training and test data (use test data to determ
 
 ```{r}
 temp_env <- new.env()
-tar_load_everything(envir = temp_env)
+tar_load(analysis_results, envir = temp_env)
 res <- grep("res_", ls(envir = temp_env), value = TRUE)
 tab_res <- temp_env$analysis_results$rsqs
 rownames(tab_res) <- NULL

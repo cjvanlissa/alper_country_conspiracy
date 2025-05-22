@@ -20,7 +20,6 @@ library(doParallel)
 tar_source()
 # source("other_functions.R") # Source other scripts as needed.
 set.seed(812)
-targets::tar_option_set(priority = 1)
 
 # Replace the target list below with your own:
 list(
@@ -44,39 +43,21 @@ list(
     name = dat,
     command = impute_missings(df_withmiss)
   )
-  # , tar_target(
-  #   name = features,
-  #   command = get_features(dat = dat, flnm = "./data/codebook.xlsx")
-  # )
-  # , tar_target(
-  #   name = dat_features,
-  #   command = select_features(dat, features)
-  # )
-  # , tar_target(
-  #   name = res_lasso,
-  #   command = lapply(dat_features, do_lasso)
-  # )
-  # , tar_target(
-  #   name = res_ranger,
-  #   command = lapply(dat_features, do_ranger)
-  # )
-  # , tar_target(
-  #   name = res_tree,
-  #   command = lapply(dat_features, do_tree)
-  # )
-  # , tar_target(
-  #   name = res_nn,
-  #   command = do_nn(dat_features, epochs = 10) # Change to 500 for real data
-  # )
-  # , tar_target(
-  #   name = analysis_results,
-  #   command = eval_results(dat, models = list(lasso = res_lasso, ranger = res_ranger, tree = res_tree, nn = res_nn))
-  # )
-  # , tarchetypes::tar_render(manuscript, "manuscript.rmd", cue = tar_cue("always"), priority = 0.5)
-  # , tar_file (
-  #   name = create_index,
-  #   command = { file.rename("manuscript.html", "index.html"); return("index.html")},
-  #   cue = tar_cue("always"),
-  #   priority = 0
-  #   )
+  , tar_target(
+    name = res_brma,
+    command = do_brma(dat, chains = 1, iter = 100)
+  )
+  , tar_target(
+    name = res_metaforest,
+    command = do_metaforest(dat)
+  )
+  , tar_target(
+    name = res_metacart,
+    command = do_metacart(dat)
+  )
+  , tar_target(
+    name = analysis_results,
+    command = eval_results(dat, models = list(BRMA = res_brma, MetaForest = res_metaforest, MetaCART = res_metacart))
+  )
+  , tarchetypes::tar_render(name = manuscript, path = "manuscript.rmd", output_file = "index.html", cue = tar_cue("always"))
 )

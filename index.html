@@ -601,9 +601,9 @@ padding-top: 0px;
 
 <body>
 
-<h1 id="towards-a-predictive-model-of-moral-concern">Towards a
-Predictive Model of Moral Concern</h1>
-<p>19 April, 2025</p>
+<h1 id="country-level-predictors-of-conspiracy-theorizing">Country Level
+Predictors of Conspiracy Theorizing</h1>
+<p>22 May, 2025</p>
 <p>This manuscript uses the Workflow for Open Reproducible Code in
 Science (Van Lissa et al. 2021) to ensure reproducibility and
 transparency. All code <!--and data--> are available at <a href="https://github.com/cjvanlissa/moral_standing.git">https://github.com/cjvanlissa/moral_standing.git</a>.</p>
@@ -616,7 +616,7 @@ transparency. All code <!--and data--> are available at <a href="https://github.
 <p>These are the Rsquared values on training and test data (use test
 data to determine unbiased performance estimates):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>temp_env <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">tar_load_everything</span>(<span class="at">envir =</span> temp_env)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">tar_load</span>(analysis_results, <span class="at">envir =</span> temp_env)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="st">&quot;res_&quot;</span>, <span class="fu">ls</span>(<span class="at">envir =</span> temp_env), <span class="at">value =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>tab_res <span class="ot">&lt;-</span> temp_env<span class="sc">$</span>analysis_results<span class="sc">$</span>rsqs</span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">rownames</span>(tab_res) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
@@ -629,168 +629,35 @@ data to determine unbiased performance estimates):</p>
 <th align="right">rsq_test</th>
 <th align="right">rsq_train</th>
 <th align="left">model</th>
-<th align="left">features</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.06</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">lasso</td>
-<td align="left">all</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.06</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">lasso</td>
-<td align="left">target</td>
-</tr>
-<tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.06</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">lasso</td>
-<td align="left">judge</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.06</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">lasso</td>
-<td align="left">demographic</td>
-</tr>
-<tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">ranger</td>
-<td align="left">all</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.19</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">ranger</td>
-<td align="left">target</td>
-</tr>
-<tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">ranger</td>
-<td align="left">judge</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">ranger</td>
-<td align="left">demographic</td>
-</tr>
-<tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">tree</td>
-<td align="left">all</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">tree</td>
-<td align="left">target</td>
-</tr>
-<tr class="odd">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">tree</td>
-<td align="left">judge</td>
-</tr>
-<tr class="even">
-<td align="right">1.30</td>
-<td align="right">0.18</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">tree</td>
-<td align="left">demographic</td>
-</tr>
-<tr class="odd">
-<td align="right">1.55</td>
-<td align="right">0.26</td>
-<td align="right">-0.13</td>
-<td align="right">-0.13</td>
-<td align="left">nn</td>
-<td align="left">all</td>
-</tr>
-<tr class="even">
-<td align="right">1.35</td>
-<td align="right">0.20</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="left">nn</td>
-<td align="left">target</td>
-</tr>
-<tr class="odd">
-<td align="right">1.45</td>
-<td align="right">0.20</td>
+<td align="right">0.95</td>
+<td align="right">0.32</td>
 <td align="right">-0.01</td>
-<td align="right">-0.01</td>
-<td align="left">nn</td>
-<td align="left">judge</td>
+<td align="right">0.02</td>
+<td align="left">BRMA</td>
 </tr>
 <tr class="even">
-<td align="right">1.39</td>
-<td align="right">0.24</td>
+<td align="right">1.02</td>
+<td align="right">0.37</td>
+<td align="right">-0.08</td>
+<td align="right">0.15</td>
+<td align="left">MetaForest</td>
+</tr>
+<tr class="odd">
+<td align="right">0.94</td>
+<td align="right">0.33</td>
 <td align="right">0.00</td>
 <td align="right">0.00</td>
-<td align="left">nn</td>
-<td align="left">demographic</td>
+<td align="left">MetaCART</td>
 </tr>
 </tbody>
 </table>
-<p>The best performing model (or interpretable model within 5% of the
-best overall model) is tree.all.</p>
-<h3 id="effect-of-features-and-model">Effect of Features and Model</h3>
-<p>The variance in model performance can be broken down into components
-due to model and feature set:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>tab_aov <span class="ot">&lt;-</span> temp_env<span class="sc">$</span>analysis_results<span class="sc">$</span>etasqs</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tab_aov, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">term</th>
-<th align="right">etasq</th>
-<th align="right">partial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">model</td>
-<td align="right">0.25</td>
-<td align="right">0.31</td>
-</tr>
-<tr class="even">
-<td align="left">features</td>
-<td align="right">0.18</td>
-<td align="right">0.24</td>
-</tr>
-</tbody>
-</table>
+<p>The best performing model (or interpretable model whose
+cross-validated mean squared error was within 1SE of the best model’s
+cross-validated mean squared error) is MetaCART.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 
 <div id="ref-vanlissaWORCSWorkflowOpen2021" class="csl-entry">

@@ -1,20 +1,36 @@
 # Tree
 do_tree <- function(dat){
   library(rpart)
-  X <- model.matrix(moral_concern ~., dat$train)[, -1]
-  Y <- as.numeric(dat$train$moral_concern)
+  X <- model.matrix(as.formula(paste0("conspiracy ~", paste0(setdiff(names(dat$train), c("conspiracy", "vi")), collapse = " + "))), dat$train)[, -1]
+  Y <- as.numeric(dat$train$conspiracy)
   tune_grid <- expand.grid(
-    minbucket = as.integer(seq(2, nrow(dat$train)/100, length.out = 20))
+    whichweights = c("random", "fixed", "unif"),
+    minbucket = as.integer(seq(2, nrow(dat$train)/100, length.out = 20)),
+    stringsAsFactors = FALSE
   )
 
   res_tune <- sapply(1:nrow(tune_grid), function(i){
     sapply(dat$folds, function(f){
       Args <- list(
-        formula = quote(moral_concern ~ .),
+        formula = quote(as.formula(paste0("conspiracy ~", paste0(setdiff(names(dat$train), c("conspiracy", "vi")), collapse = " + ")))),
         data = dat$train[-f, ],
         method = "anova",
-        control = do.call(rpart.control, args = as.list(tune_grid[i, , drop = F]))
+        control = do.call(rpart.control, args = as.list(tune_grid[i, -1, drop = F]))
       )
+      if(tune_grid$whichweights[i] %in% c("random", "fixed")){
+        y <- as.numeric(dat$train$conspiracy[-f])
+        v <- dat$train$vi[-f]
+        rma_before <- tryCatch({
+          metafor::rma(yi = y, vi = v)
+        }, error = function(e) {
+          return(metafor::rma(yi = y, vi = v, method = "DL"))
+        })
+        tau2 <- rma_before$tau2
+        metaweights <- switch(tune_grid$whichweights[i],
+                              fixed = (1/v),
+                              random = 1/(v + tau2))
+        Args$weights <- (metaweights/sum(metaweights)) * length(y)
+      }
       tree_model <- do.call(rpart, args = Args)
       preds <- predict(tree_model, newdata = dat$train[f, ])
       mean((dat$train$moral_concern[f]-preds)^2)

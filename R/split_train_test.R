@@ -2,8 +2,8 @@ split_train_test <- function(df, k = 10){
   # Scale DV per dataset
   mean_per_dataset <- tapply(df$conspiracy, factor(df$dataset), mean)
   sd_per_dataset <- tapply(df$conspiracy, factor(df$dataset), sd)
-  df$conspiracy <- (df$conspiracy - mean_per_dataset[df$dataset])/sd_per_dataset[df$dataset]
-  df$vi <- rnorm(nrow(df), sd = .01)
+  df$conspiracy <- as.numeric((df$conspiracy - mean_per_dataset[df$dataset])/sd_per_dataset[df$dataset])
+  df$vi <- abs(rnorm(nrow(df), sd = .01))
 
   df$dataset <- factor(df$dataset)
   df[["Country"]] <- NULL
@@ -16,7 +16,7 @@ split_train_test <- function(df, k = 10){
   df_test <- df[-train, ]
 
   # Create k-folds ----------------------------------------------------------
-  all.folds <- split(sample(train), cut(seq_along(train), k, labels=FALSE))
+  all.folds <- split(sample.int(nrow(df_train)), cut(1:nrow(df_train), k, labels=FALSE))
 
   # Clean Data
 
