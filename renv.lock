@@ -1759,6 +1759,30 @@
       "Maintainer": "Achim Zeileis <Achim.Zeileis@R-project.org>",
       "Repository": "CRAN"
     },
+    "commonmark": {
+      "Package": "commonmark",
+      "Version": "1.9.5",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "High Performance CommonMark and Github Markdown Rendering in R",
+      "Authors@R": "c( person(\"Jeroen\", \"Ooms\", ,\"jeroenooms@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-4035-0289\")), person(\"John MacFarlane\", role = \"cph\", comment = \"Author of cmark\"))",
+      "Description": "The CommonMark specification <https://github.github.com/gfm/> defines a rationalized version of markdown syntax. This package uses the 'cmark'  reference implementation for converting markdown text into various formats including html, latex and groff man. In addition it exposes the markdown parse tree in xml format. Also includes opt-in support for GFM extensions including tables, autolinks, and strikethrough text.",
+      "License": "BSD_2_clause + file LICENSE",
+      "URL": "https://docs.ropensci.org/commonmark/ https://ropensci.r-universe.dev/commonmark",
+      "BugReports": "https://github.com/r-lib/commonmark/issues",
+      "Suggests": [
+        "curl",
+        "testthat",
+        "xml2"
+      ],
+      "RoxygenNote": "7.3.2",
+      "Language": "en-US",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "yes",
+      "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>), John MacFarlane [cph] (Author of cmark)",
+      "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+      "Repository": "CRAN"
+    },
     "cowplot": {
       "Package": "cowplot",
       "Version": "1.1.3",
@@ -3231,6 +3255,47 @@
       "Maintainer": "Carson Sievert <carson@posit.co>",
       "Repository": "CRAN"
     },
+    "httpuv": {
+      "Package": "httpuv",
+      "Version": "1.6.16",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "HTTP and WebSocket Server Library",
+      "Authors@R": "c( person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"), person(\"Winston\", \"Chang\", , \"winston@posit.co\", role = c(\"aut\", \"cre\")), person(\"Posit, PBC\", \"fnd\", role = \"cph\"), person(\"Hector\", \"Corrada Bravo\", role = \"ctb\"), person(\"Jeroen\", \"Ooms\", role = \"ctb\"), person(\"Andrzej\", \"Krzemienski\", role = \"cph\", comment = \"optional.hpp\"), person(\"libuv project contributors\", role = \"cph\", comment = \"libuv library, see src/libuv/AUTHORS file\"), person(\"Joyent, Inc. and other Node contributors\", role = \"cph\", comment = \"libuv library, see src/libuv/AUTHORS file; and http-parser library, see src/http-parser/AUTHORS file\"), person(\"Niels\", \"Provos\", role = \"cph\", comment = \"libuv subcomponent: tree.h\"), person(\"Internet Systems Consortium, Inc.\", role = \"cph\", comment = \"libuv subcomponent: inet_pton and inet_ntop, contained in src/libuv/src/inet.c\"), person(\"Alexander\", \"Chemeris\", role = \"cph\", comment = \"libuv subcomponent: stdint-msvc2008.h (from msinttypes)\"), person(\"Google, Inc.\", role = \"cph\", comment = \"libuv subcomponent: pthread-fixes.c\"), person(\"Sony Mobile Communcations AB\", role = \"cph\", comment = \"libuv subcomponent: pthread-fixes.c\"), person(\"Berkeley Software Design Inc.\", role = \"cph\", comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"), person(\"Kenneth\", \"MacKay\", role = \"cph\", comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"), person(\"Emergya (Cloud4all, FP7/2007-2013, grant agreement no 289016)\", role = \"cph\", comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"), person(\"Steve\", \"Reid\", role = \"aut\", comment = \"SHA-1 implementation\"), person(\"James\", \"Brown\", role = \"aut\", comment = \"SHA-1 implementation\"), person(\"Bob\", \"Trower\", role = \"aut\", comment = \"base64 implementation\"), person(\"Alexander\", \"Peslyak\", role = \"aut\", comment = \"MD5 implementation\"), person(\"Trantor Standard Systems\", role = \"cph\", comment = \"base64 implementation\"), person(\"Igor\", \"Sysoev\", role = \"cph\", comment = \"http-parser\") )",
+      "Description": "Provides low-level socket and protocol support for handling HTTP and WebSocket requests directly from within R. It is primarily intended as a building block for other packages, rather than making it particularly easy to create complete web applications using httpuv alone.  httpuv is built on top of the libuv and http-parser C libraries, both of which were developed by Joyent, Inc. (See LICENSE file for libuv and http-parser license information.)",
+      "License": "GPL (>= 2) | file LICENSE",
+      "URL": "https://github.com/rstudio/httpuv",
+      "BugReports": "https://github.com/rstudio/httpuv/issues",
+      "Depends": [
+        "R (>= 2.15.1)"
+      ],
+      "Imports": [
+        "later (>= 0.8.0)",
+        "promises",
+        "R6",
+        "Rcpp (>= 1.0.7)",
+        "utils"
+      ],
+      "Suggests": [
+        "callr",
+        "curl",
+        "jsonlite",
+        "testthat",
+        "websocket"
+      ],
+      "LinkingTo": [
+        "later",
+        "Rcpp"
+      ],
+      "Encoding": "UTF-8",
+      "RoxygenNote": "7.3.2",
+      "SystemRequirements": "GNU make, zlib",
+      "Collate": "'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R' 'staticServer.R' 'static_paths.R' 'utils.R'",
+      "NeedsCompilation": "yes",
+      "Author": "Joe Cheng [aut], Winston Chang [aut, cre], Posit, PBC fnd [cph], Hector Corrada Bravo [ctb], Jeroen Ooms [ctb], Andrzej Krzemienski [cph] (optional.hpp), libuv project contributors [cph] (libuv library, see src/libuv/AUTHORS file), Joyent, Inc. and other Node contributors [cph] (libuv library, see src/libuv/AUTHORS file; and http-parser library, see src/http-parser/AUTHORS file), Niels Provos [cph] (libuv subcomponent: tree.h), Internet Systems Consortium, Inc. [cph] (libuv subcomponent: inet_pton and inet_ntop, contained in src/libuv/src/inet.c), Alexander Chemeris [cph] (libuv subcomponent: stdint-msvc2008.h (from msinttypes)), Google, Inc. [cph] (libuv subcomponent: pthread-fixes.c), Sony Mobile Communcations AB [cph] (libuv subcomponent: pthread-fixes.c), Berkeley Software Design Inc. [cph] (libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c), Kenneth MacKay [cph] (libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c), Emergya (Cloud4all, FP7/2007-2013, grant agreement no 289016) [cph] (libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c), Steve Reid [aut] (SHA-1 implementation), James Brown [aut] (SHA-1 implementation), Bob Trower [aut] (base64 implementation), Alexander Peslyak [aut] (MD5 implementation), Trantor Standard Systems [cph] (base64 implementation), Igor Sysoev [cph] (http-parser)",
+      "Maintainer": "Winston Chang <winston@posit.co>",
+      "Repository": "CRAN"
+    },
     "httr": {
       "Package": "httr",
       "Version": "1.4.7",
@@ -3658,6 +3723,39 @@
       "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
+    "later": {
+      "Package": "later",
+      "Version": "1.4.2",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Utilities for Scheduling Functions to Execute Later with Event Loops",
+      "Authors@R": "c( person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@posit.co\"), person(\"Joe\", \"Cheng\", role = c(\"aut\"), email = \"joe@posit.co\"), person(\"Charlie\", \"Gao\", role = c(\"aut\"), email = \"charlie.gao@shikokuchuo.net\", comment = c(ORCID = \"0000-0002-0750-061X\")), person(family = \"Posit Software, PBC\", role = \"cph\"), person(\"Marcus\", \"Geelnard\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\"), person(\"Evan\", \"Nemerson\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\") )",
+      "Description": "Executes arbitrary R or C functions some time after the current time, after the R execution stack has emptied. The functions are scheduled in an event loop.",
+      "URL": "https://r-lib.github.io/later/, https://github.com/r-lib/later",
+      "BugReports": "https://github.com/r-lib/later/issues",
+      "License": "MIT + file LICENSE",
+      "Imports": [
+        "Rcpp (>= 0.12.9)",
+        "rlang"
+      ],
+      "LinkingTo": [
+        "Rcpp"
+      ],
+      "RoxygenNote": "7.3.2",
+      "Suggests": [
+        "knitr",
+        "nanonext",
+        "R6",
+        "rmarkdown",
+        "testthat (>= 2.1.0)"
+      ],
+      "VignetteBuilder": "knitr",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "yes",
+      "Author": "Winston Chang [aut, cre], Joe Cheng [aut], Charlie Gao [aut] (<https://orcid.org/0000-0002-0750-061X>), Posit Software, PBC [cph], Marcus Geelnard [ctb, cph] (TinyCThread library, https://tinycthread.github.io/), Evan Nemerson [ctb, cph] (TinyCThread library, https://tinycthread.github.io/)",
+      "Maintainer": "Winston Chang <winston@posit.co>",
+      "Repository": "CRAN"
+    },
     "lattice": {
       "Package": "lattice",
       "Version": "0.22-6",
@@ -4002,6 +4100,27 @@
       "Maintainer": "Lionel Henry <lionel@rstudio.com>",
       "Repository": "CRAN"
     },
+    "mathjaxr": {
+      "Package": "mathjaxr",
+      "Version": "1.8-0",
+      "Source": "Repository",
+      "Date": "2025-04-30",
+      "Title": "Using 'Mathjax' in Rd Files",
+      "Authors@R": "person(given = \"Wolfgang\", family = \"Viechtbauer\", role = c(\"aut\",\"cre\"), email = \"wvb@wvbauer.com\", comment = c(ORCID = \"0000-0003-3463-4063\"))",
+      "Description": "Provides 'MathJax' and macros to enable its use within Rd files for rendering equations in the HTML help files.",
+      "License": "GPL-3",
+      "Encoding": "UTF-8",
+      "BuildManual": "TRUE",
+      "URL": "https://github.com/wviechtb/mathjaxr",
+      "BugReports": "https://github.com/wviechtb/mathjaxr/issues",
+      "Suggests": [
+        "js"
+      ],
+      "NeedsCompilation": "yes",
+      "Author": "Wolfgang Viechtbauer [aut, cre] (<https://orcid.org/0000-0003-3463-4063>)",
+      "Maintainer": "Wolfgang Viechtbauer <wvb@wvbauer.com>",
+      "Repository": "CRAN"
+    },
     "matrixStats": {
       "Package": "matrixStats",
       "Version": "1.5.0",
@@ -4063,6 +4182,202 @@
       "NeedsCompilation": "no",
       "Author": "Hadley Wickham [aut], Jim Hester [aut], Winston Chang [aut, cre], Kirill Müller [aut], Daniel Cook [aut], Mark Edmondson [ctb]",
       "Maintainer": "Winston Chang <winston@rstudio.com>",
+      "Repository": "CRAN"
+    },
+    "metacart": {
+      "Package": "metacart",
+      "Version": "3.0.0",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Meta-CART: A Flexible Approach to Identify Moderators in Meta-Analysis",
+      "Encoding": "UTF-8",
+      "Authors@R": "c(person(given = \"Xinru\", family = \"Li\", role = \"aut\"), person(given = \"Elise\", family = \"Dusseldorp\", role = c(\"aut\", \"cph\")), person(given = \"Kaihua\", family = \"Liu\", role = \"ctb\", comment = \"supported with the plot function\"), person(given = \"Juan\", family = \"Claramunt\", role = c(\"aut\", \"cre\"), email = \"j.claramunt.gonzalez@fsw.leidenuniv.nl\"), person(given = \"Jacqueline\", family = \"Meulman\", role = \"ctb\"))",
+      "Author": "Xinru Li [aut], Elise Dusseldorp [aut, cph], Kaihua Liu [ctb] (supported with the plot function), Juan Claramunt [aut, cre], Jacqueline Meulman [ctb]",
+      "Maintainer": "Juan Claramunt <j.claramunt.gonzalez@fsw.leidenuniv.nl>",
+      "Description": "Meta-CART integrates classification and regression trees (CART) into meta-analysis. Meta-CART is a flexible approach to identify interaction effects between moderators in meta-analysis. The method is described in Dusseldorp et al. (2014) <doi:10.1037/hea0000018> and Li et al. (2017) <doi:10.1111/bmsp.12088>.",
+      "LazyData": "TRUE",
+      "Depends": [
+        "R (>= 3.0.2)",
+        "stats",
+        "ggplot2",
+        "gridExtra",
+        "methods",
+        "rpart"
+      ],
+      "License": "GPL (>= 2)",
+      "Imports": [
+        "Rcpp (>= 1.0.0)"
+      ],
+      "LinkingTo": [
+        "Rcpp"
+      ],
+      "RoxygenNote": "7.3.2",
+      "NeedsCompilation": "yes",
+      "Repository": "CRAN"
+    },
+    "metadat": {
+      "Package": "metadat",
+      "Version": "1.4-0",
+      "Source": "Repository",
+      "Date": "2025-02-04",
+      "Title": "Meta-Analysis Datasets",
+      "Authors@R": "c( person(given = \"Wolfgang\", family = \"Viechtbauer\", role = c(\"aut\",\"cre\"), email = \"wvb@metafor-project.org\", comment = c(ORCID = \"0000-0003-3463-4063\")), person(given = \"Thomas\", family=\"White\", role=\"aut\", email = \"thomas.white@sydney.edu.au\", comment = c(ORCID = \"0000-0002-3976-1734\")), person(given = \"Daniel\", family=\"Noble\", role=\"aut\", email = \"daniel.noble@anu.edu.au\", comment = c(ORCID = \"0000-0001-9460-8743\")), person(given = \"Alistair\", family=\"Senior\", role=\"aut\", email = \"alistair.senior@sydney.edu.au\", comment = c(ORCID = \"0000-0001-9805-7280\")), person(given = \"W. Kyle\", family=\"Hamilton\", role=\"aut\", email = \"whamilton@ucmerced.edu\", comment = c(ORCID = \"0000-0002-8642-7990\")), person(given = \"Guido\", family = \"Schwarzer\", role = \"dtc\", email = \"guido.schwarzer@uniklinik-freiburg.de\", comment = c(ORCID = \"0000-0001-6214-9087\")))",
+      "Depends": [
+        "R (>= 4.0.0)"
+      ],
+      "Imports": [
+        "utils",
+        "tools",
+        "mathjaxr"
+      ],
+      "Suggests": [
+        "metafor",
+        "numDeriv",
+        "BiasedUrn",
+        "dfoptim",
+        "igraph",
+        "ape",
+        "testthat",
+        "digest",
+        "lme4",
+        "clubSandwich",
+        "meta",
+        "netmeta",
+        "mvtnorm",
+        "gridExtra",
+        "rms",
+        "bayesmeta",
+        "ellipse"
+      ],
+      "Description": "A collection of meta-analysis datasets for teaching purposes, illustrating/testing meta-analytic methods, and validating published analyses.",
+      "License": "GPL (>= 2)",
+      "ByteCompile": "TRUE",
+      "LazyData": "TRUE",
+      "Encoding": "UTF-8",
+      "RdMacros": "mathjaxr",
+      "BuildManual": "TRUE",
+      "URL": "https://github.com/wviechtb/metadat, https://wviechtb.github.io/metadat/",
+      "BugReports": "https://github.com/wviechtb/metadat/issues",
+      "NeedsCompilation": "no",
+      "Author": "Wolfgang Viechtbauer [aut, cre] (<https://orcid.org/0000-0003-3463-4063>), Thomas White [aut] (<https://orcid.org/0000-0002-3976-1734>), Daniel Noble [aut] (<https://orcid.org/0000-0001-9460-8743>), Alistair Senior [aut] (<https://orcid.org/0000-0001-9805-7280>), W. Kyle Hamilton [aut] (<https://orcid.org/0000-0002-8642-7990>), Guido Schwarzer [dtc] (<https://orcid.org/0000-0001-6214-9087>)",
+      "Maintainer": "Wolfgang Viechtbauer <wvb@metafor-project.org>",
+      "Repository": "CRAN"
+    },
+    "metafor": {
+      "Package": "metafor",
+      "Version": "4.8-0",
+      "Source": "Repository",
+      "Date": "2025-01-28",
+      "Title": "Meta-Analysis Package for R",
+      "Authors@R": "person(given = \"Wolfgang\", family = \"Viechtbauer\", role = c(\"aut\",\"cre\"), email = \"wvb@metafor-project.org\", comment = c(ORCID = \"0000-0003-3463-4063\"))",
+      "Depends": [
+        "R (>= 4.0.0)",
+        "methods",
+        "Matrix",
+        "metadat",
+        "numDeriv"
+      ],
+      "Imports": [
+        "stats",
+        "utils",
+        "graphics",
+        "grDevices",
+        "nlme",
+        "mathjaxr",
+        "pbapply",
+        "digest"
+      ],
+      "Suggests": [
+        "lme4",
+        "pracma",
+        "minqa",
+        "nloptr",
+        "dfoptim",
+        "ucminf",
+        "lbfgsb3c",
+        "subplex",
+        "BB",
+        "Rsolnp",
+        "alabama",
+        "optimParallel",
+        "optimx",
+        "CompQuadForm",
+        "mvtnorm",
+        "BiasedUrn",
+        "Epi",
+        "survival",
+        "GLMMadaptive",
+        "glmmTMB",
+        "car",
+        "multcomp",
+        "gsl",
+        "sp",
+        "ape",
+        "boot",
+        "clubSandwich",
+        "crayon",
+        "R.rsp",
+        "testthat",
+        "rmarkdown",
+        "wildmeta",
+        "emmeans",
+        "estmeansd",
+        "metaBLUE",
+        "rstudioapi",
+        "glmulti",
+        "MuMIn",
+        "mice",
+        "Amelia",
+        "calculus"
+      ],
+      "Description": "A comprehensive collection of functions for conducting meta-analyses in R. The package includes functions to calculate various effect sizes or outcome measures, fit equal-, fixed-, random-, and mixed-effects models to such data, carry out moderator and meta-regression analyses, and create various types of meta-analytical plots (e.g., forest, funnel, radial, L'Abbe, Baujat, bubble, and GOSH plots). For meta-analyses of binomial and person-time data, the package also provides functions that implement specialized methods, including the Mantel-Haenszel method, Peto's method, and a variety of suitable generalized linear (mixed-effects) models (i.e., mixed-effects logistic and Poisson regression models). Finally, the package provides functionality for fitting meta-analytic multivariate/multilevel models that account for non-independent sampling errors and/or true effects (e.g., due to the inclusion of multiple treatment studies, multiple endpoints, or other forms of clustering). Network meta-analyses and meta-analyses accounting for known correlation structures (e.g., due to phylogenetic relatedness) can also be conducted. An introduction to the package can be found in Viechtbauer (2010) <doi:10.18637/jss.v036.i03>.",
+      "License": "GPL (>= 2)",
+      "ByteCompile": "TRUE",
+      "Encoding": "UTF-8",
+      "RdMacros": "mathjaxr",
+      "VignetteBuilder": "R.rsp",
+      "BuildManual": "TRUE",
+      "URL": "https://www.metafor-project.org https://github.com/wviechtb/metafor https://wviechtb.github.io/metafor/ https://www.wvbauer.com",
+      "BugReports": "https://github.com/wviechtb/metafor/issues",
+      "NeedsCompilation": "no",
+      "Author": "Wolfgang Viechtbauer [aut, cre] (<https://orcid.org/0000-0003-3463-4063>)",
+      "Maintainer": "Wolfgang Viechtbauer <wvb@metafor-project.org>",
+      "Repository": "CRAN"
+    },
+    "metaforest": {
+      "Package": "metaforest",
+      "Version": "0.1.4",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Exploring Heterogeneity in Meta-Analysis using Random Forests",
+      "Author": "Caspar J. van Lissa",
+      "Maintainer": "Caspar J. van Lissa <c.j.vanlissa@gmail.com>",
+      "Description": "Conduct random forests-based meta-analysis, obtain partial dependence plots for metaforest and classic meta-analyses, and cross-validate and tune metaforest- and classic meta-analyses in conjunction with the caret package. A requirement of classic meta-analysis is that the studies being aggregated are conceptually similar, and ideally, close replications. However, in many fields, there is substantial heterogeneity between studies on the same topic. Classic meta-analysis lacks the power to assess more than a handful of univariate moderators. MetaForest, by contrast, has substantial power to explore heterogeneity in meta-analysis. It can identify important moderators from a larger set of potential candidates (Van Lissa, 2020). This is an appealing quality, because many meta-analyses have small sample sizes. Moreover, MetaForest yields a measure of variable importance which can be used to identify important moderators, and offers partial prediction plots to explore the shape of the marginal relationship between moderators and effect size.",
+      "Depends": [
+        "R (>= 3.5.0)",
+        "ggplot2",
+        "metafor",
+        "ranger",
+        "data.table",
+        "methods"
+      ],
+      "Imports": [
+        "gtable",
+        "grid"
+      ],
+      "Suggests": [
+        "testthat",
+        "caret",
+        "knitr",
+        "rmarkdown",
+        "covr"
+      ],
+      "License": "GPL-3",
+      "Encoding": "UTF-8",
+      "LazyData": "true",
+      "RoxygenNote": "7.2.3",
+      "VignetteBuilder": "knitr",
+      "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
     "mgcv": {
@@ -4760,6 +5075,34 @@
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
       "Repository": "CRAN"
     },
+    "pbapply": {
+      "Package": "pbapply",
+      "Version": "1.7-2",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Adding Progress Bar to '*apply' Functions",
+      "Date": "2023-06-27",
+      "Authors@R": "c(person(given = \"Peter\", family = \"Solymos\", comment = c(ORCID = \"0000-0001-7337-1740\"), role = c(\"aut\", \"cre\"), email = \"psolymos@gmail.com\"), person(given = \"Zygmunt\", family = \"Zawadzki\", role = \"aut\", email = \"zygmunt@zstat.pl\"), person(given = \"Henrik\",  family = \"Bengtsson\",  role = \"ctb\", email = \"henrikb@braju.com\"), person(\"R Core Team\", role = c(\"cph\", \"ctb\")))",
+      "Maintainer": "Peter Solymos <psolymos@gmail.com>",
+      "Description": "A lightweight package that adds progress bar to vectorized R functions ('*apply'). The implementation can easily be added to functions where showing the progress is useful (e.g. bootstrap). The type and style of the progress bar (with percentages or remaining time) can be set through options. Supports several parallel processing backends including future.",
+      "Depends": [
+        "R (>= 3.2.0)"
+      ],
+      "Imports": [
+        "parallel"
+      ],
+      "Suggests": [
+        "shiny",
+        "future",
+        "future.apply"
+      ],
+      "License": "GPL (>= 2)",
+      "URL": "https://github.com/psolymos/pbapply",
+      "BugReports": "https://github.com/psolymos/pbapply/issues",
+      "NeedsCompilation": "no",
+      "Author": "Peter Solymos [aut, cre] (<https://orcid.org/0000-0001-7337-1740>), Zygmunt Zawadzki [aut], Henrik Bengtsson [ctb], R Core Team [cph, ctb]",
+      "Repository": "CRAN"
+    },
     "pbivnorm": {
       "Package": "pbivnorm",
       "Version": "0.6.0",
@@ -4809,6 +5152,64 @@
       "NeedsCompilation": "no",
       "Author": "Ulrich Halekoh [aut, cph], Søren Højsgaard [aut, cre, cph]",
       "Repository": "CRAN"
+    },
+    "pema": {
+      "Package": "pema",
+      "Version": "0.1.4",
+      "Source": "GitHub",
+      "Title": "Penalized Meta-Analysis",
+      "Authors@R": "c( person(c(\"Caspar\", \"J\"),  \"van Lissa\", role = c(\"aut\", \"cre\"), email = \"c.j.vanlissa@tilburguniversity.edu\", comment = c(ORCID = \"0000-0002-0808-5024\")), person(c(\"Sara\", \"J\"), \"van Erp\", role = c(\"aut\")) )",
+      "Description": "Conduct penalized meta-analysis, see Van Lissa, Van Erp, & Clapper (2023) <doi:10.31234/osf.io/6phs5>. In meta-analysis, there are often between-study differences. These can be coded as moderator variables, and controlled for using meta-regression. However, if the number of moderators is large relative to the number of studies, such an analysis may be overfit. Penalized meta-regression is useful in these cases, because it shrinks the regression slopes of irrelevant moderators towards zero.",
+      "License": "GPL (>= 3)",
+      "Encoding": "UTF-8",
+      "LazyData": "true",
+      "URL": "https://github.com/cjvanlissa/pema, https://cjvanlissa.github.io/pema/",
+      "Roxygen": "list(markdown = TRUE)",
+      "RoxygenNote": "7.3.2",
+      "Biarch": "true",
+      "Depends": [
+        "R (>= 3.4.0)"
+      ],
+      "Imports": [
+        "methods",
+        "rstan (>= 2.26.0)",
+        "Rcpp (>= 0.12.0)",
+        "RcppParallel (>= 5.0.1)",
+        "rstantools (>= 2.1.1)",
+        "sn",
+        "shiny",
+        "ggplot2",
+        "cli"
+      ],
+      "LinkingTo": [
+        "BH (>= 1.66.0)",
+        "Rcpp (>= 0.12.0)",
+        "RcppEigen (>= 0.3.3.3.0)",
+        "RcppParallel (>= 5.0.1)",
+        "rstan (>= 2.26.0)",
+        "StanHeaders (>= 2.26.0)"
+      ],
+      "Suggests": [
+        "rmarkdown",
+        "knitr",
+        "mice",
+        "testthat (>= 3.0.0)",
+        "webexercises",
+        "bain",
+        "metaforest",
+        "metafor"
+      ],
+      "SystemRequirements": "GNU make",
+      "Config/testthat/edition": "3",
+      "VignetteBuilder": "knitr",
+      "Author": "Caspar J van Lissa [aut, cre] (<https://orcid.org/0000-0002-0808-5024>), Sara J van Erp [aut]",
+      "Maintainer": "Caspar J van Lissa <c.j.vanlissa@tilburguniversity.edu>",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "cjvanlissa",
+      "RemoteRepo": "pema",
+      "RemoteRef": "master",
+      "RemoteSha": "0249010bfb7f546fe5014b9575c99688fca24fd2"
     },
     "pillar": {
       "Package": "pillar",
@@ -5188,6 +5589,49 @@
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
       "Repository": "CRAN",
       "Encoding": "UTF-8"
+    },
+    "promises": {
+      "Package": "promises",
+      "Version": "1.3.2",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Abstractions for Promise-Based Asynchronous Programming",
+      "Authors@R": "c( person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = c(\"aut\", \"cre\")), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")) )",
+      "Description": "Provides fundamental abstractions for doing asynchronous programming in R using promises. Asynchronous programming is useful for allowing a single R process to orchestrate multiple tasks in the background while also attending to something else. Semantics are similar to 'JavaScript' promises, but with a syntax that is idiomatic R.",
+      "License": "MIT + file LICENSE",
+      "URL": "https://rstudio.github.io/promises/, https://github.com/rstudio/promises",
+      "BugReports": "https://github.com/rstudio/promises/issues",
+      "Imports": [
+        "fastmap (>= 1.1.0)",
+        "later",
+        "magrittr (>= 1.5)",
+        "R6",
+        "Rcpp",
+        "rlang",
+        "stats"
+      ],
+      "Suggests": [
+        "future (>= 1.21.0)",
+        "knitr",
+        "purrr",
+        "rmarkdown",
+        "spelling",
+        "testthat",
+        "vembedr"
+      ],
+      "LinkingTo": [
+        "later",
+        "Rcpp"
+      ],
+      "VignetteBuilder": "knitr",
+      "Config/Needs/website": "rsconnect",
+      "Encoding": "UTF-8",
+      "Language": "en-US",
+      "RoxygenNote": "7.3.2",
+      "NeedsCompilation": "yes",
+      "Author": "Joe Cheng [aut, cre], Posit Software, PBC [cph, fnd]",
+      "Maintainer": "Joe Cheng <joe@posit.co>",
+      "Repository": "CRAN"
     },
     "proto": {
       "Package": "proto",
@@ -6230,6 +6674,75 @@
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
+    "shiny": {
+      "Package": "shiny",
+      "Version": "1.10.0",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Web Application Framework for R",
+      "Authors@R": "c( person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@posit.co\", comment = c(ORCID = \"0000-0002-1576-2126\")), person(\"Joe\", \"Cheng\", role = \"aut\", email = \"joe@posit.co\"), person(\"JJ\", \"Allaire\", role = \"aut\", email = \"jj@posit.co\"), person(\"Carson\", \"Sievert\", role = \"aut\", email = \"carson@posit.co\", comment = c(ORCID = \"0000-0002-4958-2844\")), person(\"Barret\", \"Schloerke\", role = \"aut\", email = \"barret@posit.co\", comment = c(ORCID = \"0000-0001-9986-114X\")), person(\"Yihui\", \"Xie\", role = \"aut\", email = \"yihui@posit.co\"), person(\"Jeff\", \"Allen\", role = \"aut\"), person(\"Jonathan\", \"McPherson\", role = \"aut\", email = \"jonathan@posit.co\"), person(\"Alan\", \"Dipert\", role = \"aut\"), person(\"Barbara\", \"Borges\", role = \"aut\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")), person(family = \"jQuery Foundation\", role = \"cph\", comment = \"jQuery library and jQuery UI library\"), person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"), comment = \"jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"), person(family = \"jQuery UI contributors\", role = c(\"ctb\", \"cph\"), comment = \"jQuery UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt\"), person(\"Mark\", \"Otto\", role = \"ctb\", comment = \"Bootstrap library\"), person(\"Jacob\", \"Thornton\", role = \"ctb\", comment = \"Bootstrap library\"), person(family = \"Bootstrap contributors\", role = \"ctb\", comment = \"Bootstrap library\"), person(family = \"Twitter, Inc\", role = \"cph\", comment = \"Bootstrap library\"), person(\"Prem Nawaz\", \"Khan\", role = \"ctb\", comment = \"Bootstrap accessibility plugin\"), person(\"Victor\", \"Tsaran\", role = \"ctb\", comment = \"Bootstrap accessibility plugin\"), person(\"Dennis\", \"Lembree\", role = \"ctb\", comment = \"Bootstrap accessibility plugin\"), person(\"Srinivasu\", \"Chakravarthula\", role = \"ctb\", comment = \"Bootstrap accessibility plugin\"), person(\"Cathy\", \"O'Connor\", role = \"ctb\", comment = \"Bootstrap accessibility plugin\"), person(family = \"PayPal, Inc\", role = \"cph\", comment = \"Bootstrap accessibility plugin\"), person(\"Stefan\", \"Petre\", role = c(\"ctb\", \"cph\"), comment = \"Bootstrap-datepicker library\"), person(\"Andrew\", \"Rowls\", role = c(\"ctb\", \"cph\"), comment = \"Bootstrap-datepicker library\"), person(\"Brian\", \"Reavis\", role = c(\"ctb\", \"cph\"), comment = \"selectize.js library\"), person(\"Salmen\", \"Bejaoui\", role = c(\"ctb\", \"cph\"), comment = \"selectize-plugin-a11y library\"), person(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"), comment = \"ion.rangeSlider library\"), person(\"Sami\", \"Samhuri\", role = c(\"ctb\", \"cph\"), comment = \"Javascript strftime library\"), person(family = \"SpryMedia Limited\", role = c(\"ctb\", \"cph\"), comment = \"DataTables library\"), person(\"John\", \"Fraser\", role = c(\"ctb\", \"cph\"), comment = \"showdown.js library\"), person(\"John\", \"Gruber\", role = c(\"ctb\", \"cph\"), comment = \"showdown.js library\"), person(\"Ivan\", \"Sagalaev\", role = c(\"ctb\", \"cph\"), comment = \"highlight.js library\"), person(family = \"R Core Team\", role = c(\"ctb\", \"cph\"), comment = \"tar implementation from R\") )",
+      "Description": "Makes it incredibly easy to build interactive web applications with R. Automatic \"reactive\" binding between inputs and outputs and extensive prebuilt widgets make it possible to build beautiful, responsive, and powerful applications with minimal effort.",
+      "License": "GPL-3 | file LICENSE",
+      "Depends": [
+        "R (>= 3.0.2)",
+        "methods"
+      ],
+      "Imports": [
+        "utils",
+        "grDevices",
+        "httpuv (>= 1.5.2)",
+        "mime (>= 0.3)",
+        "jsonlite (>= 0.9.16)",
+        "xtable",
+        "fontawesome (>= 0.4.0)",
+        "htmltools (>= 0.5.4)",
+        "R6 (>= 2.0)",
+        "sourcetools",
+        "later (>= 1.0.0)",
+        "promises (>= 1.3.2)",
+        "tools",
+        "crayon",
+        "rlang (>= 0.4.10)",
+        "fastmap (>= 1.1.1)",
+        "withr",
+        "commonmark (>= 1.7)",
+        "glue (>= 1.3.2)",
+        "bslib (>= 0.6.0)",
+        "cachem (>= 1.1.0)",
+        "lifecycle (>= 0.2.0)"
+      ],
+      "Suggests": [
+        "coro (>= 1.1.0)",
+        "datasets",
+        "DT",
+        "Cairo (>= 1.5-5)",
+        "testthat (>= 3.0.0)",
+        "knitr (>= 1.6)",
+        "markdown",
+        "rmarkdown",
+        "ggplot2",
+        "reactlog (>= 1.0.0)",
+        "magrittr",
+        "yaml",
+        "future",
+        "dygraphs",
+        "ragg",
+        "showtext",
+        "sass"
+      ],
+      "URL": "https://shiny.posit.co/, https://github.com/rstudio/shiny",
+      "BugReports": "https://github.com/rstudio/shiny/issues",
+      "Collate": "'globals.R' 'app-state.R' 'app_template.R' 'bind-cache.R' 'bind-event.R' 'bookmark-state-local.R' 'bookmark-state.R' 'bootstrap-deprecated.R' 'bootstrap-layout.R' 'conditions.R' 'map.R' 'utils.R' 'bootstrap.R' 'busy-indicators-spinners.R' 'busy-indicators.R' 'cache-utils.R' 'deprecated.R' 'devmode.R' 'diagnose.R' 'extended-task.R' 'fileupload.R' 'graph.R' 'reactives.R' 'reactive-domains.R' 'history.R' 'hooks.R' 'html-deps.R' 'image-interact-opts.R' 'image-interact.R' 'imageutils.R' 'input-action.R' 'input-checkbox.R' 'input-checkboxgroup.R' 'input-date.R' 'input-daterange.R' 'input-file.R' 'input-numeric.R' 'input-password.R' 'input-radiobuttons.R' 'input-select.R' 'input-slider.R' 'input-submit.R' 'input-text.R' 'input-textarea.R' 'input-utils.R' 'insert-tab.R' 'insert-ui.R' 'jqueryui.R' 'knitr.R' 'middleware-shiny.R' 'middleware.R' 'timer.R' 'shiny.R' 'mock-session.R' 'modal.R' 'modules.R' 'notifications.R' 'priorityqueue.R' 'progress.R' 'react.R' 'reexports.R' 'render-cached-plot.R' 'render-plot.R' 'render-table.R' 'run-url.R' 'runapp.R' 'serializers.R' 'server-input-handlers.R' 'server-resource-paths.R' 'server.R' 'shiny-options.R' 'shiny-package.R' 'shinyapp.R' 'shinyui.R' 'shinywrappers.R' 'showcase.R' 'snapshot.R' 'staticimports.R' 'tar.R' 'test-export.R' 'test-server.R' 'test.R' 'update-input.R' 'utils-lang.R' 'version_bs_date_picker.R' 'version_ion_range_slider.R' 'version_jquery.R' 'version_jqueryui.R' 'version_selectize.R' 'version_strftime.R' 'viewer.R'",
+      "RoxygenNote": "7.3.2",
+      "Encoding": "UTF-8",
+      "RdMacros": "lifecycle",
+      "Config/testthat/edition": "3",
+      "Config/Needs/check": "shinytest2",
+      "NeedsCompilation": "no",
+      "Author": "Winston Chang [aut, cre] (<https://orcid.org/0000-0002-1576-2126>), Joe Cheng [aut], JJ Allaire [aut], Carson Sievert [aut] (<https://orcid.org/0000-0002-4958-2844>), Barret Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>), Yihui Xie [aut], Jeff Allen [aut], Jonathan McPherson [aut], Alan Dipert [aut], Barbara Borges [aut], Posit Software, PBC [cph, fnd], jQuery Foundation [cph] (jQuery library and jQuery UI library), jQuery contributors [ctb, cph] (jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt), jQuery UI contributors [ctb, cph] (jQuery UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt), Mark Otto [ctb] (Bootstrap library), Jacob Thornton [ctb] (Bootstrap library), Bootstrap contributors [ctb] (Bootstrap library), Twitter, Inc [cph] (Bootstrap library), Prem Nawaz Khan [ctb] (Bootstrap accessibility plugin), Victor Tsaran [ctb] (Bootstrap accessibility plugin), Dennis Lembree [ctb] (Bootstrap accessibility plugin), Srinivasu Chakravarthula [ctb] (Bootstrap accessibility plugin), Cathy O'Connor [ctb] (Bootstrap accessibility plugin), PayPal, Inc [cph] (Bootstrap accessibility plugin), Stefan Petre [ctb, cph] (Bootstrap-datepicker library), Andrew Rowls [ctb, cph] (Bootstrap-datepicker library), Brian Reavis [ctb, cph] (selectize.js library), Salmen Bejaoui [ctb, cph] (selectize-plugin-a11y library), Denis Ineshin [ctb, cph] (ion.rangeSlider library), Sami Samhuri [ctb, cph] (Javascript strftime library), SpryMedia Limited [ctb, cph] (DataTables library), John Fraser [ctb, cph] (showdown.js library), John Gruber [ctb, cph] (showdown.js library), Ivan Sagalaev [ctb, cph] (highlight.js library), R Core Team [ctb, cph] (tar implementation from R)",
+      "Maintainer": "Winston Chang <winston@posit.co>",
+      "Repository": "CRAN"
+    },
     "smoof": {
       "Package": "smoof",
       "Version": "1.6.0.3",
@@ -6270,6 +6783,59 @@
       "Encoding": "UTF-8",
       "NeedsCompilation": "yes",
       "Author": "Jakob Bossek [aut, cre] (<https://orcid.org/0000-0002-4121-4668>), Pascal Kerschke [ctb] (<https://orcid.org/0000-0003-2862-1418>)",
+      "Repository": "CRAN"
+    },
+    "sn": {
+      "Package": "sn",
+      "Version": "2.1.1",
+      "Source": "Repository",
+      "Date": "2023-04-04",
+      "Title": "The Skew-Normal and Related Distributions Such as the Skew-t and the SUN",
+      "Authors@R": "person(given = \"Adelchi\", family = \"Azzalini\",  email = \"adelchi.azzalini@unipd.it\", role = c(\"aut\", \"cre\"),  comment = c(ORCID = \"0000-0002-7583-1269\"))",
+      "Maintainer": "Adelchi Azzalini <adelchi.azzalini@unipd.it>",
+      "Depends": [
+        "R (>= 3.0.0)",
+        "methods",
+        "stats4"
+      ],
+      "Imports": [
+        "mnormt (>= 2.0.0)",
+        "numDeriv",
+        "utils",
+        "quantreg"
+      ],
+      "Suggests": [
+        "R.rsp"
+      ],
+      "VignetteBuilder": "R.rsp",
+      "Description": "Build and manipulate probability distributions of the skew-normal  family and some related ones, notably the skew-t and the SUN families.  For the skew-normal and the skew-t distributions, statistical methods are  provided for data fitting and model diagnostics, in the univariate and the  multivariate case.",
+      "License": "GPL-2 | GPL-3",
+      "URL": "http://azzalini.stat.unipd.it/SN/",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "no",
+      "Author": "Adelchi Azzalini [aut, cre] (<https://orcid.org/0000-0002-7583-1269>)",
+      "Repository": "CRAN"
+    },
+    "sourcetools": {
+      "Package": "sourcetools",
+      "Version": "0.1.7-1",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Tools for Reading, Tokenizing and Parsing R Code",
+      "Author": "Kevin Ushey",
+      "Maintainer": "Kevin Ushey <kevinushey@gmail.com>",
+      "Description": "Tools for the reading and tokenization of R code. The 'sourcetools' package provides both an R and C++ interface for the tokenization of R code, and helpers for interacting with the tokenized representation of R code.",
+      "License": "MIT + file LICENSE",
+      "Depends": [
+        "R (>= 3.0.2)"
+      ],
+      "Suggests": [
+        "testthat"
+      ],
+      "RoxygenNote": "5.0.1",
+      "BugReports": "https://github.com/kevinushey/sourcetools/issues",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "yes",
       "Repository": "CRAN"
     },
     "sp": {

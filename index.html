@@ -603,10 +603,10 @@ padding-top: 0px;
 
 <h1 id="country-level-predictors-of-conspiracy-theorizing">Country Level
 Predictors of Conspiracy Theorizing</h1>
-<p>22 May, 2025</p>
+<p>23 May, 2025</p>
 <p>This manuscript uses the Workflow for Open Reproducible Code in
 Science (Van Lissa et al. 2021) to ensure reproducibility and
-transparency. All code <!--and data--> are available at <a href="https://github.com/cjvanlissa/moral_standing.git">https://github.com/cjvanlissa/moral_standing.git</a>.</p>
+transparency. All code <!--and data--> are available at <a href="https://github.com/cjvanlissa/alper_country_conspiracy.git">https://github.com/cjvanlissa/alper_country_conspiracy.git</a>.</p>
 <p>This is an example of a non-essential citation (Van Lissa et al.
 2021). If you change the rendering function to
 <code>worcs::cite_essential</code>, it will be removed.</p>
@@ -658,6 +658,12 @@ data to determine unbiased performance estimates):</p>
 <p>The best performing model (or interpretable model whose
 cross-validated mean squared error was within 1SE of the best model’s
 cross-validated mean squared error) is MetaCART.</p>
+<h2 id="model">Model</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">print</span>(temp_env<span class="sc">$</span>analysis_results<span class="sc">$</span>model)</span></code></pre></div>
+<pre><code>## 
+## Random Effects Meta-Tree (K = 125 studies); 
+## No moderator effect was detected
+## Use summary() to inspect the meta-analysis results</code></pre>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 
 <div id="ref-vanlissaWORCSWorkflowOpen2021" class="csl-entry">

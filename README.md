@@ -12,12 +12,12 @@ You can load this project in RStudio by opening the file called 'moral_standing.
 File                      | Description                      | Usage         
 ------------------------- | -------------------------------- | --------------
 README.md                 | Description of project           | Human editable
-moral_standing.Rproj      | Project file                     | Loads project 
+alper_country_conspiracy.Rproj      | Project file                     | Loads project 
 LICENSE                   | User permissions                 | Read only     
 .worcs                    | WORCS metadata YAML              | Read only     
 prepare_data.R            | Script to process raw data       | Human editable
-manuscript/manuscript.rmd | Source code for paper            | Human editable
-manuscript/references.bib | BibTex references for manuscript | Human editable
+manuscript.rmd | Source code for paper            | Human editable
+references.bib | BibTex references for manuscript | Human editable
 renv.lock                 | Reproducible R environment       | Read only     
 
 <!--  You can consider adding the following to this file:                    -->

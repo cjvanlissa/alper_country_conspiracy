@@ -3,6 +3,7 @@ split_train_test <- function(df, k = 10){
   mean_per_dataset <- tapply(df$conspiracy, factor(df$dataset), mean)
   sd_per_dataset <- tapply(df$conspiracy, factor(df$dataset), sd)
   df$conspiracy <- as.numeric((df$conspiracy - mean_per_dataset[df$dataset])/sd_per_dataset[df$dataset])
+  # Make up a value for vi as it wasn't in my dataset; remove for real data
   df$vi <- abs(rnorm(nrow(df), sd = .01))
 
   df$dataset <- factor(df$dataset)

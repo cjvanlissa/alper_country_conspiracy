@@ -24,7 +24,7 @@ tar_config_set(store = "_targets/")
 # print(model)
 ```
 
-This manuscript uses the Workflow for Open Reproducible Code in Science [@vanlissaWORCSWorkflowOpen2021] to ensure reproducibility and transparency. All code <!--and data--> are available at <https://github.com/cjvanlissa/moral_standing.git>.
+This manuscript uses the Workflow for Open Reproducible Code in Science [@vanlissaWORCSWorkflowOpen2021] to ensure reproducibility and transparency. All code <!--and data--> are available at <https://github.com/cjvanlissa/alper_country_conspiracy.git>.
 
 This is an example of a non-essential citation [@vanlissaWORCSWorkflowOpen2021]. If you change the rendering function to `worcs::cite_essential`, it will be removed.
 
@@ -45,3 +45,10 @@ knitr::kable(tab_res, digits = 2)
 ```
 
 The best performing model (or interpretable model whose cross-validated mean squared error was within 1SE of the best model's cross-validated mean squared error) is `r temp_env[["analysis_results"]][["best"]]`.
+
+## Model
+
+```{r}
+print(temp_env$analysis_results$model)
+```
+
