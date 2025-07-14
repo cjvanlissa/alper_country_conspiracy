@@ -46,7 +46,7 @@ list(
   )
   , tar_target(
     name = res_brma,
-    command = do_brma(dat, chains = 1, iter = 100)
+    command = do_brma(dat, chains = 4, iter = 10000)
   )
   , tar_target(
     name = res_metaforest,
