@@ -8,8 +8,8 @@ library(tidySEM)
 library(lavaan)
 # Item data -----------------------------------------------------------
 
-shts <- readxl::excel_sheets("Country level factors 070325_shuffled.xlsx")[-1]
-df <- lapply(shts, readxl::read_xlsx, path = "Country level factors 070325_shuffled.xlsx", na = c("", "NA", "na", "0  ?"))
+shts <- readxl::excel_sheets("Country level factors 240425.xlsx")[-1]
+df <- lapply(shts, readxl::read_xlsx, path = "Country level factors 240425.xlsx", na = c("", "NA", "na", "0  ?"))
 
 # Examine descriptives
 desc <- lapply(df, tidySEM::descriptives)
