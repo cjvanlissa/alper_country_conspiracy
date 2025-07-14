@@ -23,15 +23,16 @@ set.seed(812)
 
 # Replace the target list below with your own:
 list(
+  # tar_target(
+  #   name = datasets, # Item level data
+  #   command = readRDS("sim_datasets.RData")
+  # )
+  # , tar_target(
+  #   name = res_psychometrics,
+  #   command = do_psychometrics(datasets)
+  # )
+  # ,
   tar_target(
-    name = datasets, # Item level data
-    command = readRDS("sim_datasets.RData")
-  )
-  , tar_target(
-    name = res_psychometrics,
-    command = do_psychometrics(datasets)
-  )
-  , tar_target(
     name = df,
     command = get_data()
     )
