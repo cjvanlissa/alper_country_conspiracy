@@ -49,3 +49,33 @@ eval_results <- function(dat, models){
     )
   )
 }
+
+interpret_model_metaforest <- function(res_metaforest){
+
+  shaps <- c("corruption" = "n", "power_distance" = "p", "GDP" = "n", "PISA.Reading" = "n", "pandemic_response" = "n",
+             "individualism" = "n", "inequality" = "p", "PISA.Science" = "n", "PISA.Math" = "n", "indulgence" = "o",
+             "political_stability" = 'n', "human_development_index" = "n", "university_graduates" = "n",
+             "WEIRDness" = "o", "uncertainty_avoidance" = "o", "longterm_orientation" = "o",
+             "masculinity" = "o", "hospitalbeds_per_1000_people" = "n", "dataset" = 'o')
+  var_importance <- sort(res_metaforest$res$forest$variable.importance, decreasing = FALSE)
+  var_importance <- data.frame(Variable = names(var_importance),
+                               importance = unname(var_importance))
+  var_importance$Variable <- ordered(var_importance$Variable, levels = var_importance$Variable)
+  var_importance$Shape <- ordered(shaps[as.character(var_importance$Variable)], levels = c("p", 'n', 'o'), labels = c("Positive", "Negative", "Other"))
+  library(ggplot2)
+  vim_plot <- ggplot(var_importance, aes(y = Variable, x = importance, shape = Shape)) +
+    geom_segment(aes(x = 0, xend = importance,
+                     y = Variable, yend = Variable), colour = "grey50", linetype = 2) +
+    geom_vline(xintercept = 0, colour = "grey50", linetype = 1) +
+    geom_point(size = 2) + xlab("Variable Importance (Permutation importance)") +
+    theme_bw() + theme(panel.grid.major.x = element_blank(),
+                       panel.grid.minor.x = element_blank(), axis.title.y = element_blank())
+
+  ggsave("vim_plot.svg", vim_plot, device = "svg")
+  set.seed(79974)
+  pd_plot <- metaforest::PartialDependence(res_metaforest$res, vars = as.character(var_importance$Variable), pi = .95, rawdata = TRUE, output = "list")
+  pd_plot[[1]] <- pd_plot[[1]] + scale_x_discrete(labels = substr(levels(pd_plot[[1]]$data$dataset), 1,1))
+  pd_plot <- metaforest:::merge_plots(rev(pd_plot))
+  ggsave("pd_plot.svg", pd_plot, device = "svg")
+  return(list(vimp = "vim_plot.svg", pd = "pd_plot.svg"))
+}

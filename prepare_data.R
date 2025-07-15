@@ -26,5 +26,6 @@ write.csv(desc, "descriptives.csv", row.names = FALSE)
 if("conspiracy_shuffled" %in% names(df)){
   names(df)[match("conspiracy_shuffled", names(df))] <- "conspiracy"
 }
-
+df$vi <- df$SE_conspiracy^2
+df[["SE_conspiracy"]] <- NULL
 open_data(df)

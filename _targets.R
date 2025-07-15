@@ -46,7 +46,7 @@ list(
   )
   , tar_target(
     name = res_brma,
-    command = do_brma(dat, chains = 4, iter = 10000)
+    command = do_brma(dat, chains = 4, iter = 5000)
   )
   , tar_target(
     name = res_metaforest,
@@ -59,6 +59,10 @@ list(
   , tar_target(
     name = analysis_results,
     command = eval_results(dat, models = list(BRMA = res_brma, MetaForest = res_metaforest, MetaCART = res_metacart))
+  )
+  , tar_target(
+    name = interpretation_results,
+    command = interpret_model_metaforest(res_metaforest)
   )
   , tarchetypes::tar_render(name = manuscript, path = "manuscript.rmd", output_file = "index.html", cue = tar_cue("always"))
 )

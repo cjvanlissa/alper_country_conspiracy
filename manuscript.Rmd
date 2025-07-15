@@ -13,7 +13,7 @@ library("worcs")
 # Then, uncomment the line below to load the original or synthetic data
 # (whichever is available), to allow anyone to reproduce your code:
 # load_data()
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 # Setup for targets:
 
 library(targets)
@@ -41,6 +41,7 @@ tar_load(analysis_results, envir = temp_env)
 res <- grep("res_", ls(envir = temp_env), value = TRUE)
 tab_res <- temp_env$analysis_results$rsqs
 rownames(tab_res) <- NULL
+tar_load(res_metaforest)
 knitr::kable(tab_res, digits = 2)
 ```
 
@@ -48,7 +49,47 @@ The best performing model (or interpretable model whose cross-validated mean squ
 
 ## Model
 
-```{r}
+```{r eval = FALSE}
 print(temp_env$analysis_results$model)
+```
+
+The best performing model was MetaForest; BRMA also had high predictive performance but more than 1SE lower than MetaForest.
+MetaCART had unacceptable performance; the R squared in the training and test sample were both negative, which indicates that performance was worse than just taking the mean value of the outcome.
+
+The predictive performance of the MetaForest model was estimated to be $R^2_{test} `r worcs::report(tab_res[["rsq_test"]][tab_res[["model"]] == "MetaForest"])`$ in the testing sample,
+and was estimated to be  $R^2_{oob} `r worcs::report(res_metaforest[["res"]][["forest"]][["r.squared"]])`$ in the out-of-bag samples of the random forest.
+
+Thus, the model predicted conspiracy beliefs moderately well in new samples, indicating moderate generalizability of the findings.
+
+## Interpretation
+
+Below is an overview of the permutation variable importances.
+These are obtained by randomly permuting (shuffling) each predictor in turn, thus decreasing any systematic association with the outcome (conspiracy beliefs) and calculating how much model performance decreases after the permutation.
+The rationale is that if a predictor is important, model performance should decrease substantially after randomly shuffling that predictor.
+
+```{r}
+tar_load(df)
+dsets <- sort(unique(df$dataset))
+dsets <- paste0(paste0(substr(dsets, 1,1), " = ", dsets) , collapse = ", ")
+```
+
+
+```{r fig.cap="Variable importance", out.width="80%"}
+tar_load(interpretation_results)
+knitr::include_graphics(interpretation_results$vimp)
+```
+
+Below are the partial dependence plots (PDPs) of each predictor's marginal association with the outcome, averaging over the effect of all other predictors, ordered by variable importance (see above).
+These plots are obtained by sampling up to 25 unique values for the predictor of interest,
+then plugging in these sampled values for each of the cases in the dataset and computing the model-predicted values on the outcome.
+Plugging in the sampled values for each of the cases in the dataset has the effect of averaging over the effects of all other predictors.
+The shaded area indicates 95% predictive intervals (95% of model-predicted values fall within the shaded area),
+and the raw data are plotted, weighted by inverse variance (more precise estimates have larger points).
+Note that for some predictors, the result is clearly affected by outliers.
+This is mostly the case for less important predictors.
+
+```{r fig.cap=paste0("Partial Dependence Plots (", dsets, ")"), out.width="100%"}
+tar_load(interpretation_results)
+knitr::include_graphics(interpretation_results$pd)
 ```
 
