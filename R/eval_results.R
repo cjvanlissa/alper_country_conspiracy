@@ -76,6 +76,6 @@ interpret_model_metaforest <- function(res_metaforest){
   pd_plot <- metaforest::PartialDependence(res_metaforest$res, vars = as.character(var_importance$Variable), pi = .95, rawdata = TRUE, output = "list")
   pd_plot[[1]] <- pd_plot[[1]] + scale_x_discrete(labels = substr(levels(pd_plot[[1]]$data$dataset), 1,1))
   pd_plot <- metaforest:::merge_plots(rev(pd_plot))
-  ggsave("pd_plot.svg", pd_plot, device = "svg")
+  ggsave("pd_plot.svg", pd_plot, device = "svg", width = 11)
   return(list(vimp = "vim_plot.svg", pd = "pd_plot.svg"))
 }
