@@ -6,7 +6,8 @@ res_brma|stem|0efe3a891b909411|ac0f99eaca900d69|dae4183d43a9e1f5|2056444925||t20
 res_metaforest|stem|0de98699fa827a3b|a51279f254c6917a|fddb676c16ac3f62|931373781||t20283.8509002254s|s546849b|546849|rds|local|vector|||15.47|Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB predictions were NaN, and were replaced with predictions across all trees.. Some OOB|
 res_metacart|stem|9891566de105fe20|2892e9ce65680023|ab4f702dd751ac49|1566774277||t20283.8514380744s|s72141b|72141|rds|local|vector|||46.43|package 'metacart' was built under R version 4.5.1|
 analysis_results|stem|8889991b584e910f|8df3eb18c0274e4e|1e0b58253cb8bd6b|-1628769239||t20283.8514599161s|s545404b|545404|rds|local|vector|||0.02||
-interpretation_results|stem|9c9512a832d06bc6|66bed4adbdc21d33|7dd853c6e396a80c|495213694||t20284.2714821757s|s104b|104|rds|local|vector|||3.71|[1m[22mUsing shapes for an ordinal variable is not advised|
+read_psychometrics_datasets|function|5860f64dd9bc5f93|||||||||||||||
+interpretation_results|stem|9c9512a832d06bc6|66bed4adbdc21d33|9b73cd650eb68e0d|495213694||t20385.5854652329s|s104b|104|rds|local|vector|||5.75|[1m[22mUsing shapes for an ordinal variable is not advised|
 rsq_numeric|function|ccfc34aaf922961c
 get_data|function|f8a3b54de79958f7
 .Random.seed|object|1c60d5e05fade7fd
@@ -15,8 +16,9 @@ print.REmrt|function|9885a1dddb5e35ce
 rsq|function|94461d9f04216a63
 impute_missings|function|dfbeafaf25c7b155
 print.FEmrt|function|6e49ce95efb082c1
-interpret_model_metaforest|function|2cd8e68753cf7de1
+interpret_model_metaforest|function|8a61d333f21d2290
 eval_results|function|37cda199dfd5c75c
+read_psychometrics_items|function|7d30fd125b9f397b
 do_psychometrics|function|70362479b5e0286d
 do_brma|function|30ca643518ea100e
 do_metacart|function|a4312bc598bcb33d
@@ -24,4 +26,6 @@ do_metaforest|function|dacd5230e30683bd
 do_tree|function|266ed2b95394b775
 do_lasso|function|9025f55ab36b074d
 do_ranger|function|8defe18d3ba53bca
-manuscript|stem|9b85e216675090dc|4a8639b807ad4ea9|fedc121572e75bbb|-1793997187|index.html*manuscript.rmd*index_files|t20284.2759053249s|s1953484b|1953484|file|local|vector|||2.24||
+datasets|stem|e5d5663d59cdeb0c|f58df61c61843c3e|e21d68bf4bb3ec7a|1070888297||t20385.5864550553s|s411406b|411406|rds|local|vector|||6.83|./ManyLabs COVID analysis data.sav: Very long string record(s) found (record type 7, subtype 14), each will be imported in consecutive separate variables. ./hornsey individual data 130825.sav: Very long string record(s) found (record type 7, subtype 14), each will be imported in consecutive separate variables|
+res_psychometrics|stem|fdc9189396e563ac|11e9611b7f4ecfe3|3910963884a9876a|451204910||t20385.5864924509s|s43b|43|rds|local|vector|||3.16||
+manuscript|stem|2cb3131c32bd02bd|4a8639b807ad4ea9|fedc121572e75bbb|-1793997187|index.html*manuscript.rmd*index_files|t20385.5865073493s|s2087267b|2087267|file|local|vector|||1.14||
