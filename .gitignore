@@ -15,3 +15,4 @@
 !df.csv
 !codebook_df.csv
 *.RData
+!psychometrics.csv
