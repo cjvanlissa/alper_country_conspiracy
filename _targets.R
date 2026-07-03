@@ -52,17 +52,19 @@ list(
     name = res_metaforest,
     command = do_metaforest(dat)
   )
-  , tar_target(
-    name = res_metacart,
-    command = do_metacart(dat)
-  )
+  # , tar_target(
+  #   name = res_metacart,
+  #   command = do_metacart(dat)
+  # )
   , tar_target(
     name = analysis_results,
-    command = eval_results(dat, models = list(BRMA = res_brma, MetaForest = res_metaforest, MetaCART = res_metacart))
+    command = eval_results(dat, models = list(BRMA = res_brma, MetaForest = res_metaforest
+                                              #, MetaCART = res_metacart
+                                              ))
   )
   , tar_target(
     name = interpretation_results,
     command = interpret_model_metaforest(res_metaforest)
   )
-  , tarchetypes::tar_render(name = manuscript, path = "manuscript.rmd", output_file = "index.html", cue = tar_cue("always"))
+  , tarchetypes::tar_render(name = manuscript, path = "manuscript.Rmd", output_file = "index.html", cue = tar_cue("always"))
 )
