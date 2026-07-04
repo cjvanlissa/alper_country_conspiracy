@@ -52,14 +52,16 @@ list(
     name = res_metaforest,
     command = do_metaforest(dat)
   )
-  # , tar_target(
-  #   name = res_metacart,
-  #   command = do_metacart(dat)
-  # )
+  , tar_target(
+    name = res_metacart,
+    command = do_metacart(dat)
+  )
   , tar_target(
     name = analysis_results,
-    command = eval_results(dat, models = list(BRMA = res_brma, MetaForest = res_metaforest
-                                              #, MetaCART = res_metacart
+    command = eval_results(dat, models = list(
+      BRMA = res_brma,
+      MetaForest = res_metaforest
+      , MetaCART = res_metacart
                                               ))
   )
   , tar_target(

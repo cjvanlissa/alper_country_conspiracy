@@ -9,7 +9,8 @@ do_metacart <- function(dat, ...) {
     ),
     stringsAsFactors = FALSE
   )
-
+  dat$train[["human_development_index"]] <- NULL
+  dat$test[["human_development_index"]] <- NULL
   cv_rmses <- sapply(1:nrow(tuning_pars), function(i) {
     sapply(dat$folds, function(thisfold) {
       Args <- list(
