@@ -8,8 +8,8 @@ library(tidySEM)
 library(lavaan)
 # Item data -----------------------------------------------------------
 
-shts <- readxl::excel_sheets("country-level data updated 180626_last.xlsx")
-shts <- shts[-c(7:9)]
+shts <- readxl::excel_sheets("country-level data updated 060726.xlsx")
+
 df <- lapply(shts, readxl::read_xlsx, path = "country-level data updated 180626_last.xlsx", na = c("", "NA", "na", "0  ?"))
 
 # Examine descriptives

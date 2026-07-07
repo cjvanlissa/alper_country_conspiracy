@@ -52,10 +52,10 @@ eval_results <- function(dat, models){
 
 interpret_model_metaforest <- function(res_metaforest){
 
-  shaps <- c("corruption" = "n", "power_distance" = "p", "GDP" = "n", "PISA.Reading" = "n", "pandemic_response" = "n",
-             "individualism" = "n", "inequality" = "p", "PISA.Science" = "n", "PISA.Math" = "n", "indulgence" = "o",
+  shaps <- c("corruption" = "p", "power_distance" = "p", "gdp" = "n", "pisa_reading" = "n", "pandemic_response" = "n",
+             "individualism" = "n", "inequality" = "p", "pisa_science" = "n", "pisa_math" = "n", "indulgence" = "o",
              "political_stability" = 'n', "human_development_index" = "n", "university_graduates" = "n",
-             "WEIRDness" = "o", "uncertainty_avoidance" = "o", "longterm_orientation" = "o",
+             "weirdness" = "o", "uncertainty_avoidance" = "o", "longterm_orientation" = "o",
              "masculinity" = "o", "hospitalbeds_per_1000_people" = "n", "dataset" = 'o')
   var_importance <- sort(res_metaforest$res$forest$variable.importance, decreasing = FALSE)
   var_importance <- data.frame(Variable = names(var_importance),
